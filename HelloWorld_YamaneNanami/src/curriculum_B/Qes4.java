@@ -1,6 +1,5 @@
 package curriculum_B;
 
-
 public class Qes4 {
 // [概要] for文を使用して掛け算処理
 // [詳細] for文を使用して掛け算の式、結果の出力をする
