@@ -1,47 +1,44 @@
 package qes1_2628logic;
 
 public class Animals {
-	private String name;
-	private double length;
-	private int speed;
-	private String scientificname;
+	public String name;
+	public double length;
+	public int speed;
+	public String scientificName;
 	
-	public Animals(String name,String scientificname) {
+	public Animals(String name,double length,int speed) {
 		this.name = name;
-		this.scientificname = scientificname;
-	}
-	public Animals (double length) {
-		this.length = length;	
-	}
-	public Animals (int speed) {
-		this.speed = speed;
-	}
-	
-	
-	public String getName() {
-		return name;
-	}
-	public double getLength() {
-		return length;
-	}
-	public int getSpeed() {
-		return speed;
-	}
-	public String getScientificname() {
-		return scientificname;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	public void setLength (int length){
 		this.length = length;
-	}
-	public void setSpeed (int speed) {
 		this.speed = speed;
+		this.scientificName = getScientificName(name);
 	}
-	public void setScientificname (String scientificname) {
-		this.scientificname = scientificname;
+	
+	
+	public String getScientificName(String name) {
+		switch (name) {
+			case "ライオン":
+				return "パンテラ レオ";
+			case"ゾウ":
+				return "ロキソドンタ・サイクロティス";
+			case"パンダ":
+				return "アイルロポダ・メラノレウカ";
+			case"チンパンジー":
+				return"パン・トゥログロディテス";
+			case"シマウマ":
+				return"チャップマンシマウマ";
+			case"インコ":
+				return"不明";
+			default:
+				return"不明";
+		}
+	}
+	
+	public void printInfo() {
+		System.out.println();
+		System.out.println("動物名：" + name);
+		System.out.println("体長：" + length + "m");
+		System.out.println("速度：" + speed + "km/h");
+		System.out.println("学名：" + getScientificName(name));
 	}	
 }
 

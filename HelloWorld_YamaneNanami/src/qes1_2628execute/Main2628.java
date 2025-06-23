@@ -6,30 +6,38 @@ import qes1_2628logic.Animals;
 
 public class Main2628 {
 
+
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("コンソールに文字を入力してください");
 		
-		Scanner scanner = new Scanner(System.in);
 		String animals = scanner.nextLine(); 
 		
+		//コンソール入力情報(animalDataList)をカンマで区切る
+		String[] animalDataList = animals.split(",");
 		
-		System.out.println("動物名：ライオン\n体長：2.1m\n速度：80km/h\n学名：パンテラ レオ");
-		System.out.println();
-		
-		System.out.println("動物名：ゾウ\n体長：3.2m\n速度：40km/h\n学名：ロキソドンタ・サイクロティス");
-		System.out.println();
-		
-		System.out.println("動物名：パンダ\n体長：1.9m\n速度：30km/h\n学名：アイルロポダ・メラノレウカ");
-		System.out.println();
-		
-		System.out.println("動物名：チンパンジー\n体長：0.94m\n体長：0.94m\n速度：25km/h\n学名：パン・トゥログロディテス");
-		System.out.println();
-		
-		System.out.println("動物名：シマウマ\n体長：2.4m\n速度：65km/h\n学名：チャップマンシマウマ");
-		System.out.println();
-		
-		System.out.println("動物名：インコ\n体長：0.1m\n速度：50km/h\n学名：不明");
-		System.out.println();	
+		//コンソール入力情報(animalDataList)の配列の各要素を順番に取り出す
+		for(String data : animalDataList) {
+			
+			// dataをコロンで分割			
+			String[] parts = data.split(":");
+			
+			//分割した要素がちょうど3つあるかチェックする			
+			if (parts.length == 3 ) {
+				
+				//動物の名前を取り出す				
+				String name = parts[0];
+				
+				//体長を文字列から小数(double型)に変換				
+				double length = Double.parseDouble(parts[1]);
+				
+				//速度を文字列から整数(int型)に変換				
+				int speed = Integer.parseInt(parts[2]);
+				
+				Animals animal = new Animals(name, length, speed);
+				animal.printInfo();	
+			}
+		}
 	}
 }
 
