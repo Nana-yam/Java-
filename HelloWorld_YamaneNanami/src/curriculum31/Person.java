@@ -32,8 +32,7 @@ public class Person {
 	//問題4：クラスメソッド「printCount」を定義してください（データ型：void）
 	//問題5：クラスメソッドの中にクラスフィールド「count」を用いて「合計〇〇人です」と出力してください
 	public static void printCount() {
-		System.out.println("合計" + count + "人です");
-		
+		System.out.println("合計" + count + "人です");	
 	}
 }
 
